@@ -1,0 +1,153 @@
+@import url(http://fonts.googleapis.com/css?family=Antic|Love+Ya+Like+A+Sister);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f6f6f6;
+	font-family: 'Tahoma', 'Arial', serif;
+	font-size: 12px;
+}
+
+h3 {
+	font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.lightGrey {
+	color: #888;
+}
+
+#page {
+	width: 800px;
+	margin: auto;
+	text-align: center;
+}
+
+#page > h3 {
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+
+#page > .listTitle {
+	margin-top: 30px;
+	padding-bottom: 8px;
+	font-family: 'Antic', 'Tahoma', serif;
+	color: #666;
+}
+
+#page #scroll1,
+#page #scroll2,
+#page #scroll3,
+#page #scroll4,
+#page #scroll5,
+#page #scroll6,
+#page #scroll7 {
+	overflow: auto;
+	height: 100px;
+	width: 400px;
+}
+
+#page #scroll2 p,
+#page #scroll3 p,
+#page #scroll7 p {
+	min-width: 800px;
+}
+
+#page .scrollBox {
+	display: inline-block;
+	background: #fefefe;
+	padding: 10px;
+	border: 1px solid #efeded;
+}
+
+#page p.justified {
+	text-align: justify;
+}
+
+#page p.left {
+	text-align: left;
+}
+
+#footer {
+	margin: auto;
+	margin-top: 40px;
+	padding: 10px 0px;
+	min-height: 100px;
+	width: 500px;
+	border-top: 1px solid #888;
+	box-shadow: inset 0px 1px 0px #fff;
+	text-align: center;
+}
+
+#footer > h3 {
+	padding-bottom: 10px;
+	font-size: 18px;
+	color: #222;
+}
+
+#footer h4 {
+	color: #444;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #888;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+	color: #444;
+}
+
+
+/* Specific CSS for "ui-scrollbar-styled" class */
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarY .ui-scrollbar-track {
+	height: 60px;
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarX .ui-scrollbar-track {
+	width: 60px;
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarY .ui-scrollbar-thumb,
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarX .ui-scrollbar-thumb {
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+	background-color: rgba(128,128,128, 0.9);
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarY:hover .ui-scrollbar-thumb,
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarX:hover .ui-scrollbar-thumb {
+	background-color: rgba(72,72,72, 0.9);
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarY .ui-scrollbar-track,
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarX .ui-scrollbar-track {
+	background: #cbcbcd;
+	border: none;
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarY .ui-scrollbar-track {
+	width: 2px;
+	padding: 0px;
+	left: 4px;
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarX .ui-scrollbar-track {
+	height: 2px;
+	padding: 0px;
+	top: 4px;
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarY .ui-scrollbar-thumb {
+	left: -4px;
+}
+
+.ui-scrollbar.ui-scrollbar-styled .ui-scrollbar-scrollbarX .ui-scrollbar-thumb {
+	top: -4px;
+}
