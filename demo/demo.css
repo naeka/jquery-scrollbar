@@ -38,6 +38,16 @@ h3 {
 	color: #666;
 }
 
+#page span.actions {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#page span.actions:hover {
+	text-decoration: underline;
+	color: #444;
+}
+
 #page #scroll1,
 #page #scroll2,
 #page #scroll3,

@@ -74,6 +74,10 @@
 			this.$viewport.append(this.$overview);
 			if(this._scrollY) { this.$container.append(this.$scrollbarY); }
 			if(this._scrollX) { this.$container.append(this.$scrollbarX); }
+			this._trackXWidth = this.$scrollbarX.find(".ui-scrollbar-track").width();
+			this._trackYHeight = this.$scrollbarY.find(".ui-scrollbar-track").height();
+			this._thumbXWidth = this.$scrollbarX.find(".ui-scrollbar-thumb").width();
+			this._thumbYHeight = this.$scrollbarY.find(".ui-scrollbar-thumb").height();
 			
 		},
 		
@@ -327,13 +331,14 @@
 				}
 				this.settings.overview.ratioY = this.settings.viewport.height / this.settings.overview.height;
 				this.settings.scrollbarY.offsetHeight = this.$scrollbarY.outerHeight() - this.$scrollbarY.height();
-				this.settings.scrollbarY.track.height = this.$scrollbarY.find(".ui-scrollbar-track").height() == 0 ?
+				this.settings.scrollbarY.track.height = this._trackYHeight == 0 ?
 					this.settings.viewport.height - this.settings.scrollbarY.offsetHeight - (this._scrollX && this.options.overlay && this.settings.overview.ratioX < 1 ? this.$scrollbarX.outerHeight() : 0) :
 					this.$scrollbarY.find(".ui-scrollbar-track").height();
-				this.settings.scrollbarY.thumb.height = this.$scrollbarY.find(".ui-scrollbar-thumb").height() == 0 ?
+				this.settings.scrollbarY.thumb.height = this._thumbYHeight == 0 ?
 					Math.min(this.settings.scrollbarY.track.height, Math.max(0, (this.settings.scrollbarY.track.height * this.settings.overview.ratioY))) :
 					this.$scrollbarY.find(".ui-scrollbar-thumb").height();
-				this.settings.scrollbarY.ratio = (this.settings.overview.height - this.$scrollbarY.find(".ui-scrollbar-track").height()) / this.settings.scrollbarY.track.height;
+				this.settings.scrollbarY.ratio = (this.settings.overview.height - this._trackYHeight) / this.settings.scrollbarY.track.height;
+				
 				this.settings.scrollbarY.pos = 0;
 				
 				this.$scrollbarY.toggleClass("disabled ui-scrollbar-disabled", this.settings.overview.ratioY >= 1);
@@ -351,13 +356,13 @@
 				}
 				this.settings.overview.ratioX = this.settings.viewport.width / this.settings.overview.width;
 				this.settings.scrollbarX.offsetWidth = this.$scrollbarX.outerWidth() - this.$scrollbarX.width();
-				this.settings.scrollbarX.track.width = this.$scrollbarX.find(".ui-scrollbar-track").width() == 0 ?
+				this.settings.scrollbarX.track.width = this._trackXWidth == 0 ?
 					this.settings.viewport.width - this.settings.scrollbarX.offsetWidth - (this._scrollY && this.options.overlay && this.settings.overview.ratioY < 1 ? this.$scrollbarY.outerWidth() : 0) :
 					this.$scrollbarX.find(".ui-scrollbar-track").width();
-				this.settings.scrollbarX.thumb.width = this.$scrollbarX.find(".ui-scrollbar-thumb").width() == 0 ?
+				this.settings.scrollbarX.thumb.width = this._thumbXWidth == 0 ?
 					Math.min(this.settings.scrollbarX.track.width, Math.max(0, (this.settings.scrollbarX.track.width * this.settings.overview.ratioX))) :
 					this.$scrollbarX.find(".ui-scrollbar-thumb").width();
-				this.settings.scrollbarX.ratio = (this.settings.overview.width - this.$scrollbarY.find(".ui-scrollbar-thumb").width()) / this.settings.scrollbarX.track.width;
+				this.settings.scrollbarX.ratio = (this.settings.overview.width - this._trackXWidth) / this.settings.scrollbarX.track.width;
 				this.settings.scrollbarX.pos = 0;
 				
 				this.$scrollbarX.toggleClass("disabled ui-scrollbar-disabled", this.settings.overview.ratioX >= 1);
@@ -388,6 +393,7 @@
 				this.scrollTo(scrollToY, scrollToX);
 			
 		},
+		
 		
 		/**
 		 * Scroll to coordinates or element
