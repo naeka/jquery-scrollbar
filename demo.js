@@ -29,4 +29,20 @@ $(function(){
 	
 	$("#scroll7").scrollbar();
 	
+	$("#scrollToTop").click(function(){
+		$("#scroll7").scrollbar("scrollTo", 0);
+	});
+	
+	$("#scrollTo30px50px").click(function(){
+		$("#scroll7").scrollbar("scrollTo", 50, 30);
+	});
+	
+	$("#scrollToP2").click(function(){
+		$("#scroll7").scrollbar("scrollTo", "#p2");
+	});
+	
+	$("#scrollToP3").click(function(){
+		$("#scroll7").scrollbar("scrollTo", $("#scroll7 #p3"));
+	});
+	
 });
